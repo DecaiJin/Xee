@@ -671,8 +671,8 @@ class EarthEngineStore(common.AbstractDataStore):
           'geometry must be a tuple or list of length 4, a ee.Geometry, or'
           f' None but got {type(geometry)}'
       )
-    x_min, y_min = self.transform(x_min_0, y_min_0)
-    x_max, y_max = self.transform(x_max_0, y_max_0)
+    x_min, y_min = (x_min_0, y_min_0)
+    x_max, y_max = (x_max_0, y_max_0)
     return x_min, y_min, x_max, y_max
 
   def get_variables(self) -> utils.Frozen[str, xarray.Variable]:
